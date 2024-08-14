@@ -9,7 +9,7 @@ const path = require('path')
 
 const app = express()
 
-const PORT = 4100
+const PORT = process.env.PORT || 4100
 
 dotEnv.config()
 
@@ -32,6 +32,6 @@ app.listen(PORT,()=>{
     console.log(`Server started and Running at ${PORT}`)
 })
 
-app.use('/home',(req,res)=>{
+app.use('/',(req,res)=>{
     res.send("<h1> Welcome to FoodRush </h1>")
 })
